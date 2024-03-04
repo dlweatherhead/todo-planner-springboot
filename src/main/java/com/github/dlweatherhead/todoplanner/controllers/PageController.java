@@ -11,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 @Controller
 @RequiredArgsConstructor
 public class PageController {
+    final TodoService todoService;
 
     @GetMapping("/")
     public ModelAndView index() {
