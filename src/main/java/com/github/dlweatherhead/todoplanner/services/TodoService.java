@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.github.dlweatherhead.todoplanner.models.StatusType;
 import com.github.dlweatherhead.todoplanner.models.Todo;
 import com.github.dlweatherhead.todoplanner.repositories.TodoRepository;
 
@@ -17,6 +18,10 @@ public class TodoService {
 
     public List<Todo> getAll() {
         return todoRepository.findAll();
+    }
+
+    public List<Todo> getAllByStatus(StatusType statusType) {
+        return todoRepository.findAllByStatus(statusType);
     }
 
     public Todo save(Todo newTodo) {
