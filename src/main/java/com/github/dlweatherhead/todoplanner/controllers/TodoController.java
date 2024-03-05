@@ -16,18 +16,12 @@ public class TodoController {
     
     final TodoService todoService;
 
-
     @PutMapping("/todos/{id}")
     public Todo updateTodoItem(@PathVariable("id") long id) {
         Todo updatedTodo = todoService.getById(id);
 
-        StatusType updatedTodoStatus = updatedTodo.getStatus();
-
-        if (updatedTodoStatus == StatusType.BACKLOG) {
-            updatedTodo.setStatus(StatusType.DOING);
-        } else if (updatedTodoStatus == StatusType.DOING) {
-            updatedTodo.setStatus(StatusType.DONE);
-        }
+        StatusType newStatus = updatedTodo.getStatus().getNextStatus();
+        updatedTodo.setStatus(newStatus);
 
         return todoService.save(updatedTodo);
     }
