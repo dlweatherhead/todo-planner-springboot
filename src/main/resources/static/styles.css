@@ -2,7 +2,7 @@ ul.todo-list {
     list-style-type: square;
 }
 
-ul.todo-list li {
+ul.todo-list li button {
     padding: 5px;
     cursor: pointer;
 }

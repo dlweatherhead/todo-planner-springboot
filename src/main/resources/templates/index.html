@@ -36,23 +36,25 @@
                 <div class="col-sm">
                     <h3 class="text-center">Backlog</h3>
                     <ul class="todo-list">
-                        <li class="border border-info" th:each="todo : ${backlog}" th:onclick="'javascript:onHandleListItemClick(' + ${todo.id} + ')'">
+                        <li th:each="todo : ${backlog}">
                             <span th:text="${todo.id}">id</span>: <span th:text="${todo.description}"></span>
+                            <button class="btn btn-outline-warning" th:onclick="'javascript:onHandleListItemClick(' + ${todo.id} + ')'">→</button>
                         </li>
                     </ul>
                 </div>
                 <div class="col-sm">
                     <h3 class="text-center">Doing</h3>
                     <ul class="todo-list">
-                        <li class="border border-warning" th:each="todo : ${doing}" th:onclick="'javascript:onHandleListItemClick(' + ${todo.id} + ')'">
+                        <li th:each="todo : ${doing}">
                             <span th:text="${todo.id}">id</span>: <span th:text="${todo.description}"></span>
+                            <button class="btn btn-outline-success" th:onclick="'javascript:onHandleListItemClick(' + ${todo.id} + ')'">✓</button>
                         </li>
                     </ul>
                 </div>
                 <div class="col-sm">
                     <h3 class="text-center">Done</h3>
                     <ul class="todo-list">
-                        <li class="border border-success" th:each="todo : ${done}" th:onclick="'javascript:onHandleListItemClick(' + ${todo.id} + ')'">
+                        <li th:each="todo : ${done}" th:onclick="'javascript:onHandleListItemClick(' + ${todo.id} + ')'">
                             <span th:text="${todo.id}">id</span>: <span th:text="${todo.description}"></span>
                         </li>
                     </ul>
