@@ -1,0 +1,8 @@
+ul.todo-list {
+    list-style-type: square;
+}
+
+ul.todo-list li {
+    padding: 5px;
+    cursor: pointer;
+}

@@ -16,6 +16,10 @@ import lombok.AllArgsConstructor;
 public class TodoService {
     final TodoRepository todoRepository;
 
+    public Todo getById(long id) {
+        return todoRepository.findById(id).orElseThrow();
+    }
+
     public List<Todo> getAll() {
         return todoRepository.findAll();
     }
